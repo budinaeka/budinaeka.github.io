@@ -15,6 +15,7 @@ Modern portfolio website untuk Veterinary Officer & Spatial Data Scientist denga
 - 🎯 **Bento Grid Layout** - Dynamic project cards
 - 🏷️ **9 Categories** - Research, Mapping, WebGIS, ML, GenAI, AI Agents, dll
 - 📊 **GitHub Contributions** - Live contribution graph
+- 📄 **CV Download** - Direct download CV from navbar
 - 🌐 **Static Site** - 100% compatible dengan GitHub Pages
 
 ### Admin Panel Features
@@ -43,6 +44,8 @@ portfolio/
 ├── projects.json           # ⭐ Data source
 ├── projects-data.js        # Frontend loader
 ├── style.css               # Custom styles
+├── cv_myasn/              # 📄 CV folder
+│   └── CV ASN - BUDINA EKA PRASETIA - 198402042010011019.pdf
 ├── img/
 │   ├── me.jpg             # Profile photo
 │   └── products/          # Project images
@@ -164,6 +167,20 @@ git push origin main
 ```
 
 4. Use path in admin panel: `img/products/new-image.jpg`
+
+## 📄 Update CV File
+
+1. Place your CV PDF in `cv_myasn/` folder
+2. Filename must match: `CV ASN - BUDINA EKA PRASETIA - 198402042010011019.pdf`
+3. Commit to GitHub:
+
+```bash
+git add cv_myasn/
+git commit -m "Update CV file"
+git push origin main
+```
+
+4. CV button will appear in navbar (after Projects link)
 
 ## 🔄 Backup & Restore
 
