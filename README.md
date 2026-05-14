@@ -1,209 +1,234 @@
 # Portfolio Website - Budina Eka Prasetia
 
-Portfolio website modern untuk Drh. Budina Eka Prasetia, M.Sc - Veterinary Officer & Spatial Data Science Enthusiast.
+Modern portfolio website untuk Veterinary Officer & Spatial Data Scientist dengan admin panel untuk manage projects.
 
-## 🌟 Features
+## 🚀 Live Demo
 
-- ✨ Modern & responsive design
-- 🎨 Glassmorphism effects
-- 🎭 Smooth animations
-- 📱 Mobile-first approach
-- 🎯 Bento grid layout for projects
-- ⚡ Fast & lightweight
-- 🔧 Admin panel untuk manage projects
+**GitHub Pages**: Deploy your portfolio for free!
+
+## ✨ Features
+
+### Portfolio Features
+- 📱 **Fully Responsive** - Mobile-first design
+- 🎨 **Modern UI** - Tailwind CSS dengan glassmorphism effects
+- ✨ **Smooth Animations** - Fade-in, hover effects
+- 🎯 **Bento Grid Layout** - Dynamic project cards
+- 🏷️ **9 Categories** - Research, Mapping, WebGIS, ML, GenAI, AI Agents, dll
+- 📊 **GitHub Contributions** - Live contribution graph
+- 🌐 **Static Site** - 100% compatible dengan GitHub Pages
+
+### Admin Panel Features
+- ✏️ **CRUD Operations** - Add, Edit, Delete projects
+- 🔄 **Drag & Drop** - Reorder projects dengan mudah
+- ⬆️⬇️ **Up/Down Buttons** - Alternative reorder method
+- 💾 **Auto-Download** - Auto-download `projects.json` setelah save
+- 📥 **Export/Import** - Backup dan restore data
+- 🔄 **Reset to Default** - Restore default projects
+
+## 🎯 Tech Stack
+
+- **HTML5** - Semantic markup
+- **Tailwind CSS** - Utility-first CSS framework
+- **JavaScript (Vanilla)** - No framework dependencies
+- **Phosphor Icons** - Modern icon library
+- **Google Fonts (Outfit)** - Clean typography
+- **GitHub Pages** - Free static hosting
 
 ## 📁 File Structure
 
 ```
 portfolio/
 ├── index.html              # Main portfolio page
-├── admin-projects.html     # Admin panel (not linked in nav)
-├── projects-data.js        # Dynamic projects loader
-├── style.css              # Custom styles
+├── admin-projects.html     # Admin panel (edit projects)
+├── projects.json           # ⭐ Data source
+├── projects-data.js        # Frontend loader
+├── style.css               # Custom styles
 ├── img/
 │   ├── me.jpg             # Profile photo
 │   └── products/          # Project images
 │       ├── 1.jpg
 │       ├── 2.jpg
 │       └── ...
-├── ADMIN-GUIDE.md         # Admin panel documentation
-└── README.md              # This file
+├── GITHUB-PAGES-GUIDE.md  # 📖 Deployment guide
+└── README.md
 ```
 
 ## 🚀 Quick Start
 
-1. **View Portfolio:**
-   - Open `index.html` in browser
-   - Navigate through sections: Home, About, Projects, Contact
+### 1. Clone Repository
 
-2. **Manage Projects:**
-   - Open `admin-projects.html` in browser
-   - Add, edit, or delete projects
-   - Changes automatically reflect on main page
-
-## 🎨 Design Principles
-
-Based on premium design guidelines:
-- **Typography:** Outfit font family
-- **Colors:** Cyan/Blue accent with neutral grays
-- **Layout:** Asymmetric bento grid
-- **Animations:** Smooth cubic-bezier easing
-- **Icons:** Phosphor Icons
-- **Effects:** Glassmorphism, floating shapes, micro-interactions
-
-## 🔧 Admin Panel
-
-Access admin panel at: `admin-projects.html`
-
-**Features:**
-- ➕ Add new projects
-- ✏️ Edit existing projects
-- 🗑️ Delete projects
-- 📊 Manage categories & sizes
-- 🖼️ Upload images
-- 🔗 Add external links
-
-**Data Storage:**
-- Uses browser localStorage
-- No backend required
-- Data persists locally
-
-See [ADMIN-GUIDE.md](ADMIN-GUIDE.md) for detailed documentation.
-
-## 📸 Adding Images
-
-1. Save images to `img/products/` folder
-2. Recommended sizes:
-   - Small card: 600x600px (1:1)
-   - Medium card: 800x600px (4:3)
-   - Large card: 1200x675px (16:9)
-3. Use descriptive filenames
-4. Reference in admin panel: `img/products/filename.jpg`
-
-## 🎯 Project Categories
-
-- **Published Research** - Academic publications
-- **Risk Mapping** - Disease risk maps
-- **WebGIS** - Web-based GIS applications
-- **Disaster Map** - Disaster risk mapping
-- **Machine Learning** - ML-based projects
-- **Generative AI** - GenAI projects and experiments
-- **Vibecoding** - Vibecoding projects
-- **AI Agents** - AI agents (Autoclaw, Hermes, etc.)
-- **Other** - Miscellaneous projects
-
-## 🌐 Technologies Used
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with animations
-- **Tailwind CSS** - Utility-first CSS framework
-- **JavaScript** - Dynamic content loading
-- **Phosphor Icons** - Icon library
-- **localStorage** - Client-side data storage
-
-## 📱 Responsive Design
-
-- **Mobile:** < 768px (single column)
-- **Tablet:** 768px - 1024px (2 columns)
-- **Desktop:** > 1024px (3 columns bento grid)
-
-## ⚡ Performance
-
-- Lightweight (no heavy frameworks)
-- Fast loading times
-- Optimized animations
-- Hardware-accelerated transforms
-- Lazy loading ready
-
-## 🔒 Security Notes
-
-- Admin panel not linked in navigation
-- Consider adding authentication for production
-- localStorage data is client-side only
-- Backup data regularly
-
-## 🎓 Sections
-
-### 1. Hero
-- Profile photo with glass effect
-- Name and title
-- Call-to-action buttons
-- Stats cards
-- Floating badge
-
-### 2. About
-- Education & career
-- International training
-- Skills grid with icons
-
-### 3. Projects
-- Dynamic bento grid layout
-- Category badges
-- Hover effects
-- External links
-
-### 4. Contact
-- Contact information
-- Contact form
-- Social links ready
-
-### 5. Footer
-- Copyright info
-- Quick links ready
-
-## 🛠️ Customization
-
-### Colors
-Edit in `index.html` Tailwind config:
-```javascript
-colors: {
-  primary: '#0ea5e9',  // Change primary color
-  accent: '#06b6d4',   // Change accent color
-}
+```bash
+git clone https://github.com/USERNAME/REPO-NAME.git
+cd REPO-NAME
 ```
 
-### Fonts
-Change in `<head>`:
-```html
-<link href="https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+### 2. Open Locally
+
+```bash
+# Option A: Simple HTTP server
+python -m http.server 8000
+
+# Option B: Using npx
+npx serve
+
+# Option C: Using PHP
+php -S localhost:8000
 ```
 
-### Animations
-Modify in `style.css`:
-- Adjust animation durations
-- Change easing functions
-- Add new keyframes
+Open browser: `http://localhost:8000/`
 
-## 📝 To-Do / Future Enhancements
+### 3. Edit Projects
 
-- [ ] Add authentication to admin panel
-- [ ] Implement backend database
-- [ ] Add image upload functionality
-- [ ] Export/import projects data
-- [ ] Add search/filter in admin
-- [ ] Multi-language support
+1. Open `http://localhost:8000/admin-projects.html`
+2. Add/Edit/Delete projects
+3. Download `projects.json` (auto-download setelah save)
+4. Replace file di repository
+5. Commit & push to GitHub
+
+```bash
+git add projects.json
+git commit -m "Update projects"
+git push origin main
+```
+
+### 4. Deploy to GitHub Pages
+
+1. Go to **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: **main** → folder: **/ (root)**
+4. Click **Save**
+5. Wait 1-2 minutes
+6. Site live at: `https://USERNAME.github.io/REPO-NAME/`
+
+📖 **Detailed Guide**: See [GITHUB-PAGES-GUIDE.md](GITHUB-PAGES-GUIDE.md)
+
+## ✏️ How to Edit Projects
+
+### Via Admin Panel (Recommended)
+
+1. Open `admin-projects.html` di browser
+2. Click **"Add New Project"**
+3. Fill form:
+   - Title (required)
+   - Description (optional)
+   - Category (required)
+   - Size: small/medium/large
+   - Image path (required)
+   - Link URL (optional)
+4. Click **"Save Project"**
+5. File `projects.json` akan auto-download
+6. Commit file tersebut ke GitHub
+
+### Manual Edit (Advanced)
+
+Edit `projects.json` directly:
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Project Title",
+    "description": "Project description",
+    "category": "research",
+    "size": "large",
+    "image": "img/products/1.jpg",
+    "link": "https://example.com"
+  }
+]
+```
+
+## 🎨 Categories
+
+| Category | Label | Icon | Color |
+|----------|-------|------|-------|
+| `research` | Published Research | 🏆 | Emerald |
+| `mapping` | Risk Mapping | 📍 | Blue |
+| `webgis` | WebGIS | 🌐 | Cyan |
+| `disaster` | Disaster Map | ⚠️ | Orange |
+| `ml` | Machine Learning | 🌳 | Purple |
+| `genai` | Generative AI | ✨ | Violet |
+| `vibecoding` | Vibecoding | 💻 | Fuchsia |
+| `aiagents` | AI Agents | 🤖 | Indigo |
+| `other` | Other | 📁 | Slate |
+
+## 📸 Add New Images
+
+1. Prepare image (1200x800px recommended, <500KB)
+2. Upload to `img/products/` folder
+3. Commit to GitHub:
+
+```bash
+git add img/products/new-image.jpg
+git commit -m "Add new project image"
+git push origin main
+```
+
+4. Use path in admin panel: `img/products/new-image.jpg`
+
+## 🔄 Backup & Restore
+
+### Export Backup
+
+```
+Admin Panel → Export Backup → Save file
+```
+
+### Import Backup
+
+```
+Admin Panel → Import Data → Select file → Confirm
+```
+
+## 🐛 Troubleshooting
+
+### Projects tidak muncul
+
+- ✅ Check `projects.json` sudah ter-commit
+- ✅ Clear browser cache (Ctrl+Shift+R)
+- ✅ Wait 2-3 minutes untuk GitHub Pages rebuild
+
+### CORS Error
+
+- ❌ Jangan buka file HTML langsung (double-click)
+- ✅ Gunakan HTTP server (python, npx serve, dll)
+
+### Image tidak muncul
+
+- ✅ Check path image (case-sensitive)
+- ✅ Pastikan image sudah ter-commit
+- ✅ Use relative path: `img/products/1.jpg`
+
+## 📚 Documentation
+
+- [GITHUB-PAGES-GUIDE.md](GITHUB-PAGES-GUIDE.md) - Complete deployment guide
+- [ADMIN-GUIDE.md](ADMIN-GUIDE.md) - Admin panel usage
+- [CATEGORY-EXAMPLES.md](CATEGORY-EXAMPLES.md) - Category usage examples
+- [QUICK-REFERENCE.md](QUICK-REFERENCE.md) - Quick reference guide
+
+## 🎯 Roadmap
+
+- [x] Modern responsive design
+- [x] Admin panel with CRUD
+- [x] Drag & drop reorder
+- [x] Export/Import backup
+- [x] GitHub Pages compatible
+- [x] Auto-download projects.json
 - [ ] Dark mode toggle
-- [ ] Analytics integration
-- [ ] SEO optimization
-- [ ] PWA support
+- [ ] Search/filter projects
+- [ ] Multi-language support
 
-## 🐛 Known Issues
+## 📝 License
 
-- localStorage data is browser-specific
-- No data sync across devices
-- Images must be uploaded manually via FTP/file manager
+MIT License - Feel free to use for your own portfolio!
 
-## 📞 Contact
+## 👤 Author
 
 **Drh. Budina Eka Prasetia, M.Sc**
+- Veterinary Officer & Spatial Data Scientist
+- Dinas Peternakan Kabupaten Sukabumi
 - Email: budinaeka@gmail.com
-- Location: Sukabumi, Indonesia
-- Position: Dinas Peternakan Kab. Sukabumi
-
-## 📄 License
-
-Personal portfolio website. All rights reserved.
+- GitHub: [@budinaeka](https://github.com/budinaeka)
 
 ---
 
-**Built with** ❤️ **in 2026**
+**Made with ❤️ using Tailwind CSS & Vanilla JavaScript**

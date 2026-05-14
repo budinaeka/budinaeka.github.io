@@ -68,19 +68,19 @@
         <p class="text-slate-600">Add, edit, or delete your portfolio projects</p>
       </div>
 
-      <!-- Backup Info Panel -->
-      <div class="mb-6 glass-card p-4 border-l-4 border-blue-500">
+      <!-- GitHub Pages Deployment Info -->
+      <div class="mb-6 glass-card p-4 border-l-4 border-emerald-500">
         <div class="flex items-start gap-3">
-          <i class="ph-fill ph-info text-blue-500 text-xl flex-shrink-0 mt-0.5"></i>
+          <i class="ph-fill ph-github-logo text-emerald-500 text-xl flex-shrink-0 mt-0.5"></i>
           <div>
-            <h3 class="font-semibold text-slate-900 mb-1">💾 Data Backup Tips</h3>
+            <h3 class="font-semibold text-slate-900 mb-1">🚀 GitHub Pages Deployment</h3>
             <p class="text-sm text-slate-600 mb-2">
-              Your projects are stored in browser localStorage. Use Export/Import to backup your data.
+              After editing projects, download the updated <code class="px-1.5 py-0.5 bg-slate-100 rounded text-xs">projects.json</code> file and commit it to your repository.
             </p>
             <ul class="text-xs text-slate-600 space-y-1">
-              <li>• <strong>Export:</strong> Download backup JSON file regularly</li>
-              <li>• <strong>Import:</strong> Restore from backup file</li>
-              <li>• <strong>Reset:</strong> Restore default projects</li>
+              <li>• <strong>Save Project:</strong> Auto-downloads updated <code class="px-1 py-0.5 bg-slate-100 rounded">projects.json</code></li>
+              <li>• <strong>Commit to GitHub:</strong> Replace the file in your repo and push</li>
+              <li>• <strong>GitHub Pages:</strong> Will automatically update within 1-2 minutes</li>
             </ul>
           </div>
         </div>
@@ -93,9 +93,14 @@
           Add New Project
         </button>
         
-        <button onclick="exportProjects()" class="btn-secondary">
+        <button onclick="manualDownloadJSON()" class="px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-xl font-medium transition-colors border border-emerald-200 inline-flex items-center gap-2">
           <i class="ph ph-download-simple text-lg"></i>
-          Export Data
+          Download projects.json
+        </button>
+        
+        <button onclick="exportProjects()" class="btn-secondary">
+          <i class="ph ph-file-arrow-down text-lg"></i>
+          Export Backup
         </button>
         
         <label class="btn-secondary cursor-pointer">
@@ -104,7 +109,7 @@
           <input type="file" id="importFile" accept=".json" class="hidden" onchange="importProjects(event)" />
         </label>
         
-        <button onclick="resetToDefault()" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 rounded-xl font-medium transition-colors border border-red-200">
+        <button onclick="resetToDefault()" class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 rounded-xl font-medium transition-colors border border-red-200 inline-flex items-center gap-2">
           <i class="ph ph-arrow-counter-clockwise text-lg"></i>
           Reset to Default
         </button>
@@ -258,62 +263,120 @@
     <!-- JavaScript -->
     <script>
       // Sample data structure for projects
-      let projects = [
-        {
-          id: 1,
-          title: "Spatial Risk Assessment of Foot and Mouth Disease",
-          description: "GIS and multicriteria decision analysis approach for disease risk mapping in Sukabumi regency, Indonesia",
-          category: "research",
-          size: "large",
-          image: "img/products/1.jpg",
-          link: "https://doi.org/10.1016/j.rvsc.2025.105694"
-        },
-        {
-          id: 2,
-          title: "Peta Risiko Penyakit Rabies",
-          description: "Kabupaten Sukabumi",
-          category: "mapping",
-          size: "medium",
-          image: "img/products/2.jpg",
-          link: ""
-        },
-        {
-          id: 3,
-          title: "Lokasi Peternak Wilayah 1",
-          description: "",
-          category: "webgis",
-          size: "small",
-          image: "img/products/3.jpg",
-          link: "https://budinaeka.github.io/petapeternak"
-        },
-        {
-          id: 4,
-          title: "Rawan Bencana Merapi",
-          description: "",
-          category: "disaster",
-          size: "small",
-          image: "img/products/4.jpg",
-          link: "https://budinamerapi.vercel.app"
-        },
-        {
-          id: 5,
-          title: "Random Forest Risk Mapping",
-          description: "Foot-and-Mouth Disease in Sukabumi Regency",
-          category: "ml",
-          size: "medium",
-          image: "img/products/5.jpg",
-          link: ""
-        }
-      ];
+      let projects = [];
+      
+      // Data source
+      const DATA_SOURCE = 'projects.json';
 
-      // Load projects from localStorage if available
-      const savedProjects = localStorage.getItem('portfolioProjects');
-      if (savedProjects) {
-        projects = JSON.parse(savedProjects);
-      } else {
-        // Save initial projects to localStorage
-        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+      // Load projects from JSON file or localStorage
+      async function loadProjects() {
+        try {
+          // Try to load from projects.json first
+          const response = await fetch(DATA_SOURCE + '?t=' + Date.now());
+          if (!response.ok) {
+            throw new Error('Failed to load projects.json');
+          }
+          projects = await response.json();
+          
+          // Sync to localStorage
+          localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+          renderProjects();
+        } catch (error) {
+          console.warn('Could not load projects.json, using localStorage:', error);
+          
+          // Fallback to localStorage
+          const saved = localStorage.getItem('portfolioProjects');
+          if (saved) {
+            projects = JSON.parse(saved);
+          } else {
+            // Last fallback: default projects
+            projects = getDefaultProjects();
+            localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+          }
+          renderProjects();
+        }
       }
+
+      // Save projects to localStorage and trigger download
+      async function saveProjects(autoDownload = false) {
+        // Save to localStorage
+        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+        
+        // Auto-download updated projects.json file
+        if (autoDownload) {
+          downloadProjectsJSON();
+        }
+        
+        return true;
+      }
+
+      // Download projects.json file
+      function downloadProjectsJSON() {
+        const json = JSON.stringify(projects, null, 2);
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'projects.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // Get default projects
+      function getDefaultProjects() {
+        return [
+          {
+            id: 1,
+            title: "Spatial Risk Assessment of Foot and Mouth Disease",
+            description: "GIS and multicriteria decision analysis approach for disease risk mapping in Sukabumi regency, Indonesia",
+            category: "research",
+            size: "large",
+            image: "img/products/1.jpg",
+            link: "https://doi.org/10.1016/j.rvsc.2025.105694"
+          },
+          {
+            id: 2,
+            title: "Peta Risiko Penyakit Rabies",
+            description: "Kabupaten Sukabumi",
+            category: "mapping",
+            size: "medium",
+            image: "img/products/2.jpg",
+            link: ""
+          },
+          {
+            id: 3,
+            title: "Lokasi Peternak Wilayah 1",
+            description: "",
+            category: "webgis",
+            size: "small",
+            image: "img/products/3.jpg",
+            link: "https://budinaeka.github.io/petapeternak"
+          },
+          {
+            id: 4,
+            title: "Rawan Bencana Merapi",
+            description: "",
+            category: "disaster",
+            size: "small",
+            image: "img/products/4.jpg",
+            link: "https://budinamerapi.vercel.app"
+          },
+          {
+            id: 5,
+            title: "Random Forest Risk Mapping",
+            description: "Foot-and-Mouth Disease in Sukabumi Regency",
+            category: "ml",
+            size: "medium",
+            image: "img/products/5.jpg",
+            link: ""
+          }
+        ];
+      }
+
+      // Load projects on page load
+      loadProjects();
 
       // Category badges configuration
       const categoryConfig = {
@@ -458,14 +521,14 @@
       function deleteProject(id) {
         if (confirm('Are you sure you want to delete this project?')) {
           projects = projects.filter(p => p.id !== id);
-          localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+          saveProjects(true); // Auto-download
           renderProjects();
-          showToast('Project deleted successfully');
+          showToast('Project deleted! Download projects.json and commit to GitHub', 4000);
         }
       }
 
       // Handle form submission
-      document.getElementById('projectForm').addEventListener('submit', function(e) {
+      document.getElementById('projectForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const id = document.getElementById('projectId').value;
@@ -490,14 +553,14 @@
           projects.push(projectData);
         }
 
-        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+        await saveProjects(true); // Auto-download projects.json
         renderProjects();
         closeModal();
-        showToast(id ? 'Project updated successfully' : 'Project added successfully');
+        showToast(id ? 'Project updated! Download projects.json and commit to GitHub' : 'Project added! Download projects.json and commit to GitHub', 5000);
       });
 
       // Show success toast
-      function showToast(message) {
+      function showToast(message, duration = 3000) {
         const toast = document.getElementById('successToast');
         const toastMessage = document.getElementById('toastMessage');
         toastMessage.textContent = message;
@@ -505,7 +568,13 @@
         
         setTimeout(() => {
           toast.classList.add('hidden');
-        }, 3000);
+        }, duration);
+      }
+
+      // Manual download projects.json
+      function manualDownloadJSON() {
+        downloadProjectsJSON();
+        showToast('projects.json downloaded! Commit this file to GitHub', 4000);
       }
 
       // Drag and Drop functionality
@@ -544,9 +613,9 @@
           projects.splice(dropIndex, 0, draggedItem);
           
           // Save and re-render
-          localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+          saveProjects(true); // Auto-download
           renderProjects();
-          showToast('Project order updated!');
+          showToast('Project order updated! Download projects.json and commit to GitHub', 4000);
         }
 
         return false;
@@ -570,9 +639,9 @@
         [projects[index], projects[index - 1]] = [projects[index - 1], projects[index]];
         
         // Save and re-render
-        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+        saveProjects(true); // Auto-download
         renderProjects();
-        showToast('Project moved up!');
+        showToast('Project moved up! Download projects.json and commit to GitHub', 4000);
       }
 
       function moveDown(index) {
@@ -582,9 +651,9 @@
         [projects[index], projects[index + 1]] = [projects[index + 1], projects[index]];
         
         // Save and re-render
-        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+        saveProjects(true); // Auto-download
         renderProjects();
-        showToast('Project moved down!');
+        showToast('Project moved down! Download projects.json and commit to GitHub', 4000);
       }
 
       // Close modal when clicking outside
@@ -623,7 +692,7 @@
       }
 
       // Import projects from JSON file
-      function importProjects(event) {
+      async function importProjects(event) {
         const file = event.target.files[0];
         if (!file) return;
 
@@ -640,7 +709,7 @@
         }
 
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = async function(e) {
           try {
             const importedData = JSON.parse(e.target.result);
             
@@ -658,9 +727,9 @@
               throw new Error('Invalid project data structure');
             }
 
-            // Save to localStorage
-            localStorage.setItem('portfolioProjects', JSON.stringify(importedData));
+            // Save to file and localStorage
             projects = importedData;
+            await saveProjects();
             
             // Re-render
             renderProjects();
@@ -684,63 +753,15 @@
       }
 
       // Reset to default projects
-      function resetToDefault() {
+      async function resetToDefault() {
         if (!confirm('This will reset all projects to default. This action cannot be undone. Continue?')) {
           return;
         }
 
-        const defaultProjects = [
-          {
-            id: 1,
-            title: "Spatial Risk Assessment of Foot and Mouth Disease",
-            description: "GIS and multicriteria decision analysis approach for disease risk mapping in Sukabumi regency, Indonesia",
-            category: "research",
-            size: "large",
-            image: "img/products/1.jpg",
-            link: "https://doi.org/10.1016/j.rvsc.2025.105694"
-          },
-          {
-            id: 2,
-            title: "Peta Risiko Penyakit Rabies",
-            description: "Kabupaten Sukabumi",
-            category: "mapping",
-            size: "medium",
-            image: "img/products/2.jpg",
-            link: ""
-          },
-          {
-            id: 3,
-            title: "Lokasi Peternak Wilayah 1",
-            description: "",
-            category: "webgis",
-            size: "small",
-            image: "img/products/3.jpg",
-            link: "https://budinaeka.github.io/petapeternak"
-          },
-          {
-            id: 4,
-            title: "Rawan Bencana Merapi",
-            description: "",
-            category: "disaster",
-            size: "small",
-            image: "img/products/4.jpg",
-            link: "https://budinamerapi.vercel.app"
-          },
-          {
-            id: 5,
-            title: "Random Forest Risk Mapping",
-            description: "Foot-and-Mouth Disease in Sukabumi Regency",
-            category: "ml",
-            size: "medium",
-            image: "img/products/5.jpg",
-            link: ""
-          }
-        ];
-
-        localStorage.setItem('portfolioProjects', JSON.stringify(defaultProjects));
-        projects = defaultProjects;
+        projects = getDefaultProjects();
+        await saveProjects(true); // Auto-download
         renderProjects();
-        showToast('Projects reset to default successfully!');
+        showToast('Projects reset to default! Download projects.json and commit to GitHub', 4000);
       }
     </script>
 
