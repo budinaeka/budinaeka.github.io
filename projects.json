@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Spatial Risk Assessment of Foot and Mouth Disease",
-    "description": "Foot and mouth disease (FMD) is a highly contagious viral disease that affects cloven-hoofed animals and causes substantial economic losses. This study aimed to conduct a spatial risk assessment of FMD in Sukabumi Regency, Indonesia, to identify high-risk areas and guide mitigation efforts. The research integrated Geographic Information Systems (GIS) and Multicriteria Decision Analysis (MCDA) using the Analytical Hierarchy Process (AHP). Sixteen thematic maps were analyzed, representing various risk factors related to livestock demographics, infrastructure and market access, veterinary capacity and environmental conditions. Seventeen expert opinions were used to weigh these factors' relative importance in influencing FMD risk. The GIS-based risk modelling identified high-risk zones along livestock movement corridors and areas with high livestock density. The model demonstrated good predictive ability (AUC = 0.808) when validated against 2024 outbreak data. The findings highlight the critical role of livestock movement and trade connectivity in FMD transmission. The risk map generated in this study can be a valuable tool for policymakers and veterinary authorities to prioritize interventions, allocate resources effectively, and implement targeted strategies to mitigate FMD risk. The integrated GIS and MCDA approach offers a replicable framework for spatial risk assessment of FMD in other regions with similar challenges.",
+    "description": "Foot and mouth disease (FMD) is a highly contagious viral disease that affects cloven-hoofed animals and causes substantial economic losses. This study aimed to conduct a spatial risk assessment of FMD in Sukabumi Regency, Indonesia, to identify high-risk areas and guide mitigation efforts. The research integrated Geographic Information Systems (GIS) and Multicriteria Decision Analysis (MCDA) using the Analytical Hierarchy Process (AHP). The findings highlight the critical role of livestock movement and trade connectivity in FMD transmission. The risk map generated in this study can be a valuable tool for policymakers and veterinary authorities to prioritize interventions, allocate resources effectively, and implement targeted strategies to mitigate FMD risk. The integrated GIS and MCDA approach offers a replicable framework for spatial risk assessment of FMD in other regions with similar challenges.",
     "category": "research",
     "size": "large",
     "image": "img/products/1.jpg",
@@ -11,7 +11,7 @@
   {
     "id": 5,
     "title": "Random Forest Risk Mapping of Foot-and-Mouth Disease in Sukabumi Regency, Indonesia",
-    "description": "Foot-and-Mouth Disease (FMD) is a highly contagious viral disease that severely impacts livestock economies, especially in regions like Sukabumi Regency, Indonesia, where livestock farming is vital. This study aimed to assess the spatial risk of FMD in Sukabumi using Random Forest (RF) and Geographic Information Systems (GIS) to produce a comprehensive risk map. The objective was to identify high-risk zones and understand the key factors influencing FMD outbreaks in the region. The study employed an observational spatial epidemiological design, integrating historical outbreak data with 16 spatial risk factors, including livestock demographics, market and movement, veterinary capacity, and environmental variables. A Random Forest model was trained and validated using these predictors, with data split into training and testing subsets. Performance metrics, such as accuracy, sensitivity, specificity, and AUC, were used to evaluate model effectiveness. The results revealed that RF accurately classified FMD risk zones, with an AUC of 0.939, indicating high predictive performance. This study contributes to the understanding of FMD transmission dynamics and provides a practical framework for targeted disease control. This work demonstrates the potential of machine learning and GIS in improving livestock disease management strategies.",
+    "description": "Foot-and-Mouth Disease (FMD) is a highly contagious viral disease that severely impacts livestock economies, especially in regions like Sukabumi Regency, Indonesia, where livestock farming is vital. This study aimed to assess the spatial risk of FMD in Sukabumi using Random Forest (RF) and Geographic Information Systems (GIS) to produce a comprehensive risk map. The objective was to identify high-risk zones and understand the key factors influencing FMD outbreaks in the region. A Random Forest model was trained and validated using these predictors, with data split into training and testing subsets. Performance metrics, such as accuracy, sensitivity, specificity, and AUC, were used to evaluate model effectiveness. ",
     "category": "research",
     "size": "medium",
     "image": "img/products/5.jpg",
@@ -20,11 +20,20 @@
   {
     "id": 1778730766460,
     "title": "EpiMetricsID",
-    "description": "EpiMetricsId adalah aplikasi web analitik epidemiologi berbasis Python/Flask yang dirancang untuk membantu pengguna mengunggah, mengeksplorasi, menganalisis, dan memvisualisasikan data epidemiologi secara praktis dalam satu workspace.\n\nAplikasi ini menyediakan fitur upload data .csv dan .xlsx, preview dataset, validasi tipe kolom, pembuatan dummy data untuk latihan, serta berbagai modul analisis epidemiologi. Di dalamnya tersedia perhitungan ukuran sampel, analisis deskriptif, visualisasi plot, analisis tabel 2x2 seperti OR/RR/PR, analisis bivariat, regresi OLS, regresi logistik binomial, dan regresi logistik multinomial.\n\nEpiMetricsId juga dilengkapi modul Uji Diagnostik untuk menghitung metrik seperti sensitivitas, spesifisitas, serta parameter diagnostik lain berdasarkan nilai TP, FP, FN, dan TN. Untuk kebutuhan pemetaan, aplikasi ini memiliki modul Spatio-temporal Map yang mendukung peta interaktif, clustering, heatmap, filter waktu, time slider, grafik tren bulanan, dan ringkasan lokasi seperti top kecamatan.",
-    "category": "other",
+    "description": "EpiMetricsId adalah aplikasi web analitik epidemiologi berbasis Python/Flask yang dirancang untuk membantu pengguna mengunggah, mengeksplorasi, menganalisis, dan memvisualisasikan data epidemiologi secara praktis dalam satu workspace.\n\nAplikasi ini menyediakan fitur perhitungan ukuran sampel, analisis deskriptif, visualisasi plot, analisis tabel 2x2 seperti OR/RR/PR, analisis bivariat, regresi OLS, regresi logistik binomial, dan regresi logistik multinomial, juga dilengkapi modul Uji Diagnostik serta modul Spatio-temporal Map",
+    "category": "epidemiology",
     "size": "small",
     "image": "img/products/epimetricsid.jpg",
     "link": "https://epimetrics.dvmanalytics.id/"
+  },
+  {
+    "id": 1778732467539,
+    "title": "status-kitwan.dvmanalytics.id",
+    "description": "Status Kitwan adalah aplikasi peta interaktif untuk menampilkan status situasi penyakit hewan di Indonesia berdasarkan wilayah kabupaten/kota, mengacu pada Kepmentan No.287/KPTS/HK.150/M/04/2026.  Aplikasi ini memungkinkan pengguna memilih jenis penyakit hewan, seperti PMK, LSD, ASF, Rabies, HPAI, Brucellosis, Anthraks, CSF, SE, Jembrana, dan Surra, lalu melihat klasifikasi wilayah berdasarkan status Bebas, Terduga, atau Tertular.  ",
+    "category": "mapping",
+    "size": "small",
+    "image": "img/products/statuskitwan.png",
+    "link": "https://status-kitwan.budinaeka.my.id/"
   },
   {
     "id": 2,
