@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Spatial Risk Assessment of Foot and Mouth Disease",
+    "description": "GIS and multicriteria decision analysis approach for disease risk mapping in Sukabumi regency, Indonesia",
+    "category": "research",
+    "size": "large",
+    "image": "img/products/1.jpg",
+    "link": "https://doi.org/10.1016/j.rvsc.2025.105694"
+  },
+  {
+    "id": 2,
+    "title": "Peta Risiko Penyakit Rabies",
+    "description": "Kabupaten Sukabumi",
+    "category": "mapping",
+    "size": "medium",
+    "image": "img/products/2.jpg",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "title": "Lokasi Peternak Wilayah 1",
+    "description": "",
+    "category": "webgis",
+    "size": "small",
+    "image": "img/products/3.jpg",
+    "link": "https://budinaeka.github.io/petapeternak"
+  },
+  {
+    "id": 4,
+    "title": "Rawan Bencana Merapi",
+    "description": "",
+    "category": "disaster",
+    "size": "small",
+    "image": "img/products/4.jpg",
+    "link": "https://budinamerapi.vercel.app"
+  },
+  {
+    "id": 5,
+    "title": "Random Forest Risk Mapping",
+    "description": "Foot-and-Mouth Disease in Sukabumi Regency",
+    "category": "ml",
+    "size": "medium",
+    "image": "img/products/5.jpg",
+    "link": ""
+  }
+]

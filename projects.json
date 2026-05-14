@@ -2,11 +2,20 @@
   {
     "id": 1,
     "title": "Spatial Risk Assessment of Foot and Mouth Disease",
-    "description": "GIS and multicriteria decision analysis approach for disease risk mapping in Sukabumi regency, Indonesia",
+    "description": "Foot and mouth disease (FMD) is a highly contagious viral disease that affects cloven-hoofed animals and causes substantial economic losses. This study aimed to conduct a spatial risk assessment of FMD in Sukabumi Regency, Indonesia, to identify high-risk areas and guide mitigation efforts. The research integrated Geographic Information Systems (GIS) and Multicriteria Decision Analysis (MCDA) using the Analytical Hierarchy Process (AHP). Sixteen thematic maps were analyzed, representing various risk factors related to livestock demographics, infrastructure and market access, veterinary capacity and environmental conditions. Seventeen expert opinions were used to weigh these factors' relative importance in influencing FMD risk. The GIS-based risk modelling identified high-risk zones along livestock movement corridors and areas with high livestock density. The model demonstrated good predictive ability (AUC = 0.808) when validated against 2024 outbreak data. The findings highlight the critical role of livestock movement and trade connectivity in FMD transmission. The risk map generated in this study can be a valuable tool for policymakers and veterinary authorities to prioritize interventions, allocate resources effectively, and implement targeted strategies to mitigate FMD risk. The integrated GIS and MCDA approach offers a replicable framework for spatial risk assessment of FMD in other regions with similar challenges.",
     "category": "research",
     "size": "large",
     "image": "img/products/1.jpg",
     "link": "https://doi.org/10.1016/j.rvsc.2025.105694"
+  },
+  {
+    "id": 5,
+    "title": "Random Forest Risk Mapping of Foot-and-Mouth Disease in Sukabumi Regency, Indonesia",
+    "description": "Foot-and-Mouth Disease (FMD) is a highly contagious viral disease that severely impacts livestock economies, especially in regions like Sukabumi Regency, Indonesia, where livestock farming is vital. This study aimed to assess the spatial risk of FMD in Sukabumi using Random Forest (RF) and Geographic Information Systems (GIS) to produce a comprehensive risk map. The objective was to identify high-risk zones and understand the key factors influencing FMD outbreaks in the region. The study employed an observational spatial epidemiological design, integrating historical outbreak data with 16 spatial risk factors, including livestock demographics, market and movement, veterinary capacity, and environmental variables. A Random Forest model was trained and validated using these predictors, with data split into training and testing subsets. Performance metrics, such as accuracy, sensitivity, specificity, and AUC, were used to evaluate model effectiveness. The results revealed that RF accurately classified FMD risk zones, with an AUC of 0.939, indicating high predictive performance. This study contributes to the understanding of FMD transmission dynamics and provides a practical framework for targeted disease control. This work demonstrates the potential of machine learning and GIS in improving livestock disease management strategies.",
+    "category": "research",
+    "size": "medium",
+    "image": "img/products/5.jpg",
+    "link": "https://doi.org/10.1051/bioconf/202622903003"
   },
   {
     "id": 2,
@@ -34,14 +43,5 @@
     "size": "small",
     "image": "img/products/4.jpg",
     "link": "https://budinamerapi.vercel.app"
-  },
-  {
-    "id": 5,
-    "title": "Random Forest Risk Mapping",
-    "description": "Foot-and-Mouth Disease in Sukabumi Regency",
-    "category": "ml",
-    "size": "medium",
-    "image": "img/products/5.jpg",
-    "link": ""
   }
 ]
