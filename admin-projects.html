@@ -115,6 +115,12 @@
         <!-- Projects will be loaded here -->
       </div>
 
+      <!-- Reorder Instructions -->
+      <div class="mt-6 text-center text-sm text-slate-500">
+        <i class="ph ph-arrows-out-cardinal"></i>
+        Drag and drop projects to reorder them
+      </div>
+
     </main>
 
     <!-- Modal for Add/Edit Project -->
@@ -337,24 +343,49 @@
           return;
         }
 
-        projects.forEach(project => {
+        projects.forEach((project, index) => {
           const config = categoryConfig[project.category] || categoryConfig.other;
           const card = document.createElement('div');
-          card.className = 'bg-white rounded-2xl border border-slate-200 p-5 hover:shadow-lg transition-all';
+          card.className = 'bg-white rounded-2xl border border-slate-200 p-5 hover:shadow-lg transition-all cursor-move';
+          card.draggable = true;
+          card.dataset.index = index;
+          
+          // Drag events
+          card.addEventListener('dragstart', handleDragStart);
+          card.addEventListener('dragover', handleDragOver);
+          card.addEventListener('drop', handleDrop);
+          card.addEventListener('dragend', handleDragEnd);
+          
           card.innerHTML = `
             <div class="flex gap-5">
+              <div class="flex items-center flex-shrink-0">
+                <div class="w-8 flex flex-col gap-1 cursor-move drag-handle" title="Drag to reorder">
+                  <div class="w-full h-1 bg-slate-300 rounded"></div>
+                  <div class="w-full h-1 bg-slate-300 rounded"></div>
+                  <div class="w-full h-1 bg-slate-300 rounded"></div>
+                </div>
+              </div>
               <img src="${project.image}" alt="${project.title}" class="w-32 h-32 object-cover rounded-xl flex-shrink-0" />
               <div class="flex-1 min-w-0">
                 <div class="flex items-start justify-between gap-4 mb-2">
                   <div class="flex-1 min-w-0">
-                    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-${config.color}-50 text-${config.color}-700 text-xs font-medium mb-2">
-                      <i class="ph-fill ph-${config.icon}"></i>
-                      ${config.label}
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-xs font-semibold text-slate-500">#${index + 1}</span>
+                      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-${config.color}-50 text-${config.color}-700 text-xs font-medium">
+                        <i class="ph-fill ph-${config.icon}"></i>
+                        ${config.label}
+                      </div>
                     </div>
                     <h3 class="text-lg font-semibold text-slate-900 mb-1 truncate">${project.title}</h3>
                     ${project.description ? `<p class="text-sm text-slate-600 line-clamp-2">${project.description}</p>` : ''}
                   </div>
                   <div class="flex gap-2 flex-shrink-0">
+                    <button onclick="moveUp(${index})" ${index === 0 ? 'disabled' : ''} class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center transition-colors" title="Move Up">
+                      <i class="ph ph-caret-up text-slate-700"></i>
+                    </button>
+                    <button onclick="moveDown(${index})" ${index === projects.length - 1 ? 'disabled' : ''} class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center transition-colors" title="Move Down">
+                      <i class="ph ph-caret-down text-slate-700"></i>
+                    </button>
                     <button onclick="editProject(${project.id})" class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors" title="Edit">
                       <i class="ph ph-pencil text-slate-700"></i>
                     </button>
@@ -475,6 +506,85 @@
         setTimeout(() => {
           toast.classList.add('hidden');
         }, 3000);
+      }
+
+      // Drag and Drop functionality
+      let draggedIndex = null;
+
+      function handleDragStart(e) {
+        draggedIndex = parseInt(e.currentTarget.dataset.index);
+        e.currentTarget.style.opacity = '0.4';
+        e.dataTransfer.effectAllowed = 'move';
+      }
+
+      function handleDragOver(e) {
+        if (e.preventDefault) {
+          e.preventDefault();
+        }
+        e.dataTransfer.dropEffect = 'move';
+        
+        const card = e.currentTarget;
+        card.style.borderColor = '#0ea5e9';
+        card.style.borderWidth = '2px';
+        
+        return false;
+      }
+
+      function handleDrop(e) {
+        if (e.stopPropagation) {
+          e.stopPropagation();
+        }
+
+        const dropIndex = parseInt(e.currentTarget.dataset.index);
+        
+        if (draggedIndex !== dropIndex) {
+          // Reorder array
+          const draggedItem = projects[draggedIndex];
+          projects.splice(draggedIndex, 1);
+          projects.splice(dropIndex, 0, draggedItem);
+          
+          // Save and re-render
+          localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+          renderProjects();
+          showToast('Project order updated!');
+        }
+
+        return false;
+      }
+
+      function handleDragEnd(e) {
+        e.currentTarget.style.opacity = '1';
+        
+        // Reset all borders
+        document.querySelectorAll('#projectsList > div').forEach(card => {
+          card.style.borderColor = '';
+          card.style.borderWidth = '';
+        });
+      }
+
+      // Move Up/Down functions
+      function moveUp(index) {
+        if (index === 0) return;
+        
+        // Swap with previous
+        [projects[index], projects[index - 1]] = [projects[index - 1], projects[index]];
+        
+        // Save and re-render
+        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+        renderProjects();
+        showToast('Project moved up!');
+      }
+
+      function moveDown(index) {
+        if (index === projects.length - 1) return;
+        
+        // Swap with next
+        [projects[index], projects[index + 1]] = [projects[index + 1], projects[index]];
+        
+        // Save and re-render
+        localStorage.setItem('portfolioProjects', JSON.stringify(projects));
+        renderProjects();
+        showToast('Project moved down!');
       }
 
       // Close modal when clicking outside
@@ -655,6 +765,23 @@
 
       .animate-slide-in {
         animation: slide-in 0.3s ease-out;
+      }
+
+      /* Drag and drop styles */
+      .cursor-move {
+        cursor: move;
+      }
+
+      .drag-handle:hover {
+        opacity: 0.7;
+      }
+
+      [draggable="true"] {
+        user-select: none;
+      }
+
+      [draggable="true"]:active {
+        cursor: grabbing;
       }
     </style>
 
