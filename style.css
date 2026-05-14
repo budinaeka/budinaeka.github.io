@@ -382,6 +382,22 @@ body {
   color: #4338ca;
 }
 
+/* Rose for Epidemiology Analytic */
+.bg-rose-50 {
+  background-color: #fff1f2;
+}
+.text-rose-700 {
+  color: #be123c;
+}
+
+/* Amber for Spatio-temporal Analyses */
+.bg-amber-50 {
+  background-color: #fffbeb;
+}
+.text-amber-700 {
+  color: #b45309;
+}
+
 /* Gradient backgrounds for skill cards */
 .from-violet-400 {
   --tw-gradient-from: #a78bfa;

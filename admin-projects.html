@@ -185,10 +185,12 @@
               <option value="genai">Generative AI (LLMs, GenAI)</option>
               <option value="vibecoding">Vibecoding (Creative Coding)</option>
               <option value="aiagents">AI Agents (Autoclaw, Hermes)</option>
+              <option value="epidemiology">Epidemiology Analytic</option>
+              <option value="spatiotemporal">Spatio-temporal Analyses</option>
               <option value="other">Other</option>
             </select>
             <p class="text-xs text-slate-500 mt-1">
-              💡 <strong>New:</strong> GenAI for LLM projects, Vibecoding for creative coding, AI Agents for bots/automation
+              💡 <strong>New:</strong> Epidemiology for disease analysis, Spatio-temporal for time-series spatial data
             </p>
           </div>
 
@@ -297,16 +299,10 @@
         }
       }
 
-      // Save projects to localStorage and trigger download
-      async function saveProjects(autoDownload = false) {
+      // Save projects to localStorage (no auto-download)
+      async function saveProjects() {
         // Save to localStorage
         localStorage.setItem('portfolioProjects', JSON.stringify(projects));
-        
-        // Auto-download updated projects.json file
-        if (autoDownload) {
-          downloadProjectsJSON();
-        }
-        
         return true;
       }
 
@@ -388,6 +384,8 @@
         genai: { label: 'Generative AI', icon: 'sparkle', color: 'violet' },
         vibecoding: { label: 'Vibecoding', icon: 'code', color: 'fuchsia' },
         aiagents: { label: 'AI Agents', icon: 'robot', color: 'indigo' },
+        epidemiology: { label: 'Epidemiology Analytic', icon: 'virus', color: 'rose' },
+        spatiotemporal: { label: 'Spatio-temporal Analyses', icon: 'clock-clockwise', color: 'amber' },
         other: { label: 'Other', icon: 'folder', color: 'slate' }
       };
 
@@ -521,9 +519,9 @@
       function deleteProject(id) {
         if (confirm('Are you sure you want to delete this project?')) {
           projects = projects.filter(p => p.id !== id);
-          saveProjects(true); // Auto-download
+          saveProjects();
           renderProjects();
-          showToast('Project deleted! Download projects.json and commit to GitHub', 4000);
+          showToast('Project deleted! Click "Download projects.json" to save changes', 4000);
         }
       }
 
@@ -553,10 +551,10 @@
           projects.push(projectData);
         }
 
-        await saveProjects(true); // Auto-download projects.json
+        await saveProjects();
         renderProjects();
         closeModal();
-        showToast(id ? 'Project updated! Download projects.json and commit to GitHub' : 'Project added! Download projects.json and commit to GitHub', 5000);
+        showToast(id ? 'Project updated! Click "Download projects.json" to save changes' : 'Project added! Click "Download projects.json" to save changes', 4000);
       });
 
       // Show success toast
@@ -613,9 +611,9 @@
           projects.splice(dropIndex, 0, draggedItem);
           
           // Save and re-render
-          saveProjects(true); // Auto-download
+          saveProjects();
           renderProjects();
-          showToast('Project order updated! Download projects.json and commit to GitHub', 4000);
+          showToast('Project order updated! Click "Download projects.json" to save changes', 4000);
         }
 
         return false;
@@ -639,9 +637,9 @@
         [projects[index], projects[index - 1]] = [projects[index - 1], projects[index]];
         
         // Save and re-render
-        saveProjects(true); // Auto-download
+        saveProjects();
         renderProjects();
-        showToast('Project moved up! Download projects.json and commit to GitHub', 4000);
+        showToast('Project moved up! Click "Download projects.json" to save changes', 4000);
       }
 
       function moveDown(index) {
@@ -651,9 +649,9 @@
         [projects[index], projects[index + 1]] = [projects[index + 1], projects[index]];
         
         // Save and re-render
-        saveProjects(true); // Auto-download
+        saveProjects();
         renderProjects();
-        showToast('Project moved down! Download projects.json and commit to GitHub', 4000);
+        showToast('Project moved down! Click "Download projects.json" to save changes', 4000);
       }
 
       // Close modal when clicking outside
@@ -759,9 +757,9 @@
         }
 
         projects = getDefaultProjects();
-        await saveProjects(true); // Auto-download
+        await saveProjects();
         renderProjects();
-        showToast('Projects reset to default! Download projects.json and commit to GitHub', 4000);
+        showToast('Projects reset to default! Click "Download projects.json" to save changes', 4000);
       }
     </script>
 

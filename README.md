@@ -13,7 +13,7 @@ Modern portfolio website untuk Veterinary Officer & Spatial Data Scientist denga
 - 🎨 **Modern UI** - Tailwind CSS dengan glassmorphism effects
 - ✨ **Smooth Animations** - Fade-in, hover effects
 - 🎯 **Bento Grid Layout** - Dynamic project cards
-- 🏷️ **9 Categories** - Research, Mapping, WebGIS, ML, GenAI, AI Agents, dll
+- 🏷️ **11 Categories** - Research, Mapping, WebGIS, ML, GenAI, AI Agents, Epidemiology, Spatio-temporal, dll
 - 📊 **GitHub Contributions** - Live contribution graph
 - 📄 **CV Download** - Direct download CV from navbar
 - 🌐 **Static Site** - 100% compatible dengan GitHub Pages
@@ -152,6 +152,8 @@ Edit `projects.json` directly:
 | `genai` | Generative AI | ✨ | Violet |
 | `vibecoding` | Vibecoding | 💻 | Fuchsia |
 | `aiagents` | AI Agents | 🤖 | Indigo |
+| `epidemiology` | Epidemiology Analytic | 🦠 | Rose |
+| `spatiotemporal` | Spatio-temporal Analyses | 🕐 | Amber |
 | `other` | Other | 📁 | Slate |
 
 ## 📸 Add New Images

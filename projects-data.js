@@ -64,6 +64,8 @@ const ProjectsManager = {
     genai: { label: 'Generative AI', icon: 'sparkle', color: 'violet' },
     vibecoding: { label: 'Vibecoding', icon: 'code', color: 'fuchsia' },
     aiagents: { label: 'AI Agents', icon: 'robot', color: 'indigo' },
+    epidemiology: { label: 'Epidemiology Analytic', icon: 'virus', color: 'rose' },
+    spatiotemporal: { label: 'Spatio-temporal Analyses', icon: 'clock-clockwise', color: 'amber' },
     other: { label: 'Other', icon: 'folder', color: 'slate' }
   },
 
