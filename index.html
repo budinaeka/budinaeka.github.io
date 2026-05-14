@@ -3,186 +3,522 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Budina Eka Prasetia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-
-    <!-- Bootsrap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <title>Budina Eka Prasetia - Veterinary Officer & Spatial Data Scientist</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              primary: '#0ea5e9',
+              accent: '#06b6d4',
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body id="home">
+  <body id="home" class="antialiased">
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top border-bottom border-warning border-2" style="background-color: #083d62">
-      <div class="container">
-        <a class="navbar-brand" href="#">Budina Eka Prasetia</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact Me</a>
-            </li>
-          </ul>
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="#home" class="text-xl font-semibold tracking-tight text-slate-900 hover:text-primary transition-colors duration-300">
+            Budina Eka
+          </a>
+          
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="btn-primary">
+              Contact Me
+            </a>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-700 hover:text-primary transition-colors">
+            <i class="ph ph-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200/50">
+        <div class="max-w-[1400px] mx-auto px-6 py-6 flex flex-col gap-4">
+          <a href="#home" class="mobile-nav-link">Home</a>
+          <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#projects" class="mobile-nav-link">Projects</a>
+          <a href="#contact" class="mobile-nav-link">Contact Me</a>
         </div>
       </div>
     </nav>
     <!-- Navbar end -->
-    <!-- Jumbotron start -->
-    <section class="jumbotron text-center">
-      <img src="img/me.jpg" alt="budina eka prasetia" width="200" class="rounded-circle img-thumbnail" />
-      <h2 class="display-4 fs-2 fw-bolder">Drh. Budina Eka Prasetia, M.Sc</h2>
-      <p class="lead">Veterinary Officer | Spatial Data Science Enthusiast</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,0L30,37.3C60,75,120,149,180,176C240,203,300,181,360,154.7C420,128,480,96,540,80C600,64,660,64,720,80C780,96,840,128,900,144C960,160,1020,160,1080,138.7C1140,117,1200,75,1260,64C1320,53,1380,75,1410,85.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Jumbotron end -->
-    <!-- About start -->
-    <section id="about">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>About Me</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
-            <p>Menempuh Sarjana Kedokteran Hewan dan Profesi Dokter Hewan di IPB, Magister Sains Veteriner di UGM serta bekerja di Dinas Peternakan Kabupaten Sukabumi sejak 2010</p>
-          </div>
-          <div class="col-md-4">
-            <p>
-              Pernah mengikuti pelatihan di Massey University (New Zealand), University of Melbourne, Murdoch University dan Griffith University (Australia), PTC+ (Belanda) serta berbagai pelatihan analisa spasial, mampu menggunakan ArcGIS,
-              QGIS, bahasa pemprograman python dan R.
+    <!-- Hero start -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-cyan-50/30">
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+      </div>
+      
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-20 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="space-y-6 fade-in-up">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-50 border border-cyan-200/50 text-cyan-700 text-xs font-medium">
+              <span class="pulse-dot"></span>
+              Available for Collaboration
+            </div>
+            
+            <h1 class="text-3xl lg:text-4xl font-bold tracking-tighter leading-tight text-slate-900">
+              Drh. Budina Eka Prasetia, 
+              <span class="text-gradient">M.Sc</span>
+            </h1>
+            
+            <p class="text-base lg:text-lg text-slate-600 leading-relaxed">
+              Veterinary Officer & Spatial Data Science Enthusiast specializing in disease risk mapping and geospatial analysis
             </p>
+            
+            <div class="flex flex-wrap gap-3">
+              <a href="#projects" class="btn-primary group">
+                View Projects
+                <i class="ph ph-arrow-right text-lg group-hover:translate-x-1 transition-transform"></i>
+              </a>
+              <a href="#contact" class="btn-secondary">
+                Get in Touch
+              </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/50">
+              <div class="stat-card">
+                <div class="text-2xl lg:text-3xl font-bold text-slate-900">14+</div>
+                <div class="text-xs lg:text-sm text-slate-600">Years Experience</div>
+              </div>
+              <div class="stat-card">
+                <div class="text-2xl lg:text-3xl font-bold text-slate-900">5+</div>
+                <div class="text-xs lg:text-sm text-slate-600">Major Projects</div>
+              </div>
+              <div class="stat-card">
+                <div class="text-2xl lg:text-3xl font-bold text-slate-900">4</div>
+                <div class="text-xs lg:text-sm text-slate-600">Countries Trained</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Image -->
+          <div class="relative fade-in-up delay-200 max-w-md mx-auto lg:mx-0">
+            <div class="glass-card p-2.5">
+              <img src="img/me.jpg" alt="Budina Eka Prasetia" class="w-full h-auto rounded-3xl object-cover shadow-2xl" />
+            </div>
+            
+            <!-- Floating Badge -->
+            <div class="absolute -bottom-3 -left-3 glass-card p-3 max-w-[200px] floating-badge hidden lg:block">
+              <div class="flex items-start gap-2.5">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center flex-shrink-0">
+                  <i class="ph-fill ph-map-pin text-white text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-slate-900">Based in</div>
+                  <div class="text-xs text-slate-600">Sukabumi, Indonesia</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#cdd3d5"
-          fill-opacity="1"
-          d="M0,256L30,213.3C60,171,120,85,180,64C240,43,300,85,360,96C420,107,480,85,540,106.7C600,128,660,192,720,218.7C780,245,840,235,900,208C960,181,1020,139,1080,128C1140,117,1200,139,1260,138.7C1320,139,1380,117,1410,106.7L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-        ></path>
-      </svg>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-indicator hidden lg:block">
+        <i class="ph ph-caret-down text-slate-400 text-xl"></i>
+      </div>
+    </section>
+    <!-- Hero end -->
+    <!-- About start -->
+    <section id="about" class="py-20 lg:py-24 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="grid lg:grid-cols-5 gap-12 items-start">
+          <!-- Left Title -->
+          <div class="lg:col-span-2 lg:sticky lg:top-32 fade-in-up">
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tighter text-slate-900 mb-4">
+              About Me
+            </h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+          </div>
+          
+          <!-- Right Content -->
+          <div class="lg:col-span-3 space-y-10 fade-in-up delay-200">
+            <!-- Education & Career -->
+            <div class="space-y-4">
+              <h3 class="text-xl font-semibold text-slate-900">Education & Career</h3>
+              <p class="text-base text-slate-600 leading-relaxed">
+                Menempuh Sarjana Kedokteran Hewan dan Profesi Dokter Hewan di IPB, Magister Sains Veteriner di UGM serta bekerja di Dinas Peternakan Kabupaten Sukabumi sejak 2010.
+              </p>
+            </div>
+            
+            <!-- Training & Skills -->
+            <div class="space-y-4">
+              <h3 class="text-xl font-semibold text-slate-900">International Training & Skills</h3>
+              <p class="text-base text-slate-600 leading-relaxed">
+                Pernah mengikuti pelatihan di Massey University (New Zealand), University of Melbourne, Murdoch University dan Griffith University (Australia), PTC+ (Belanda) serta berbagai pelatihan analisa spasial. Mampu menggunakan ArcGIS, QGIS, bahasa pemrograman Python dan R, serta berpengalaman dengan Generative AI tools (LLMs), Vibecoding, dan AI Agents (Autoclaw, Hermes).
+              </p>
+            </div>
+            
+            <!-- Skills Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4">
+              <div class="skill-card group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <i class="ph-fill ph-map-trifold text-white text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-1.5">GIS Software</h4>
+                <p class="text-sm text-slate-600">ArcGIS, QGIS</p>
+              </div>
+              
+              <div class="skill-card group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <i class="ph-fill ph-code text-white text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-1.5">Programming</h4>
+                <p class="text-sm text-slate-600">Python, R</p>
+              </div>
+              
+              <div class="skill-card group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <i class="ph-fill ph-chart-line text-white text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-1.5">Data Analysis</h4>
+                <p class="text-sm text-slate-600">Spatial Statistics</p>
+              </div>
+              
+              <div class="skill-card group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <i class="ph-fill ph-first-aid-kit text-white text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-1.5">Veterinary</h4>
+                <p class="text-sm text-slate-600">Disease Risk Mapping</p>
+              </div>
+              
+              <div class="skill-card group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <i class="ph-fill ph-sparkle text-white text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-1.5">Generative AI</h4>
+                <p class="text-sm text-slate-600">LLMs, AI Agents</p>
+              </div>
+              
+              <div class="skill-card group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-fuchsia-400 to-pink-500 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <i class="ph-fill ph-robot text-white text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-1.5">AI Agents</h4>
+                <p class="text-sm text-slate-600">Autoclaw, Hermes, Vibecoding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- About end -->
     <!-- Projects start -->
-    <section id="projects">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>My Projects</h2>
+    <section id="projects" class="py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <!-- Header -->
+        <div class="text-center mb-16 fade-in-up">
+          <h2 class="text-3xl lg:text-4xl font-bold tracking-tighter text-slate-900 mb-4">
+            Featured Projects
+          </h2>
+          <p class="text-base text-slate-600 max-w-2xl mx-auto">
+            Spatial analysis and disease risk mapping projects combining veterinary science with geospatial technology
+          </p>
+        </div>
+        
+        <!-- Bento Grid - Projects will be loaded dynamically -->
+        <div class="bento-grid" id="projectsContainer">
+          <!-- Projects loaded from projects-data.js -->
+        </div>
+      </div>
+    </section>
+    <!-- Projects end -->
+
+    <!-- GitHub Contributions start -->
+    <section id="github" class="py-20 lg:py-24 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <!-- Header -->
+        <div class="text-center mb-12 fade-in-up">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-sm font-medium mb-4">
+            <i class="ph-fill ph-github-logo"></i>
+            Open Source Contributions
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold tracking-tighter text-slate-900 mb-4">
+            GitHub Activity
+          </h2>
+          <p class="text-base text-slate-600 max-w-2xl mx-auto">
+            Track my coding journey and open source contributions
+          </p>
+        </div>
+
+        <!-- GitHub Contribution Graph -->
+        <div class="fade-in-up delay-200">
+          <div class="glass-card p-6 lg:p-8 overflow-hidden">
+            <!-- GitHub Stats Cards -->
+            <div class="grid sm:grid-cols-3 gap-4 mb-6">
+              <div class="text-center p-4 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                <div class="text-2xl font-bold text-slate-900 mb-1">
+                  <i class="ph-fill ph-git-commit text-primary"></i>
+                </div>
+                <div class="text-xs text-slate-600 font-medium">Contributions</div>
+              </div>
+              
+              <div class="text-center p-4 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                <div class="text-2xl font-bold text-slate-900 mb-1">
+                  <i class="ph-fill ph-git-branch text-emerald-500"></i>
+                </div>
+                <div class="text-xs text-slate-600 font-medium">Repositories</div>
+              </div>
+              
+              <div class="text-center p-4 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                <div class="text-2xl font-bold text-slate-900 mb-1">
+                  <i class="ph-fill ph-code text-violet-500"></i>
+                </div>
+                <div class="text-xs text-slate-600 font-medium">Languages</div>
+              </div>
+            </div>
+
+            <!-- Contribution Graph Embed -->
+            <div class="relative rounded-2xl overflow-hidden bg-white border border-slate-200">
+              <div class="w-full overflow-x-auto">
+                <img 
+                  src="https://ghchart.rshah.org/0ea5e9/budinaeka" 
+                  alt="GitHub Contribution Graph" 
+                  class="w-full min-w-[600px] h-auto p-4"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <!-- GitHub Profile Link -->
+            <div class="mt-6 text-center">
+              <a 
+                href="https://github.com/budinaeka" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition-all hover:scale-105 hover:shadow-lg"
+              >
+                <i class="ph-fill ph-github-logo text-xl"></i>
+                View GitHub Profile
+                <i class="ph ph-arrow-up-right text-sm"></i>
+              </a>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="mt-6 pt-6 border-t border-slate-200">
+              <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-600">
+                <div class="flex items-center gap-2">
+                  <i class="ph-fill ph-star text-yellow-500"></i>
+                  <span>Open Source Contributor</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="ph-fill ph-git-pull-request text-blue-500"></i>
+                  <span>Active Developer</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="ph-fill ph-users text-emerald-500"></i>
+                  <span>Community Member</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/products/1.jpg" class="card-img-top" alt="projects1" />
-              <div class="card-body">
-                <p class="card-text"><a href="https://doi.org/10.1016/j.rvsc.2025.105694">Spatial risk assessment of foot and mouth disease in Sukabumi regency, Indonesia: A GIS and multicriteria decision analysis approach</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/products/2.jpg" class="card-img-top" alt="projects2" />
-              <div class="card-body">
-                <p class="card-text">Penyusunan Peta Risiko Penyakit Rabies di Kabupaten Sukabumi</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/products/3.jpg" class="card-img-top" alt="projects3" />
-              <div class="card-body">
-                <p class="card-text"><a href="https://budinaeka.github.io/petapeternak">WebGIS Lokasi Peternak WIlayah 1 Sukabumi</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/products/4.jpg" class="card-img-top" alt="projects4" />
-              <div class="card-body">
-                <p class="card-text"><a href="https://budinamerapi.vercel.app">WebGIS Rawan Bencana Gunung Merapi</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/products/5.jpg" class="card-img-top" alt="projects5" />
-              <div class="card-body">
-                <p class="card-text">Random Forest Risk Mapping of Foot-and-Mouth Disease in Sukabumi Regency, Indonesia</p>
-              </div>
-            </div>
+
+        <!-- Tech Stack -->
+        <div class="mt-12 fade-in-up delay-300">
+          <h3 class="text-xl font-semibold text-slate-900 mb-6 text-center">Tech Stack & Tools</h3>
+          <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-colors">
+              <i class="ph-fill ph-file-py"></i> Python
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-colors">
+              <i class="ph-fill ph-file-js"></i> JavaScript
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-colors">
+              <i class="ph-fill ph-file-html"></i> HTML/CSS
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-colors">
+              <i class="ph-fill ph-database"></i> SQL
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-colors">
+              <i class="ph-fill ph-terminal"></i> Git
+            </span>
+            <span class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-colors">
+              <i class="ph-fill ph-code"></i> VS Code
+            </span>
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#fff"
-          fill-opacity="1"
-          d="M0,0L48,37.3C96,75,192,149,288,186.7C384,224,480,224,576,208C672,192,768,160,864,149.3C960,139,1056,149,1152,170.7C1248,192,1344,224,1392,240L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
     </section>
-    <!-- Projects end -->
-    <!-- contact start -->
-    <section id="contact">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>Contact Me</h2>
+    <!-- GitHub Contributions end -->
+    
+    <!-- Contact start -->
+    <section id="contact" class="py-20 lg:py-24 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="fade-in-up">
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tighter text-slate-900 mb-4">
+              Let's Work Together
+            </h2>
+            <p class="text-base text-slate-600 leading-relaxed mb-8">
+              Interested in collaboration or have questions about spatial data analysis and veterinary disease mapping? Feel free to reach out.
+            </p>
+            
+            <!-- Contact Info -->
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center flex-shrink-0">
+                  <i class="ph-fill ph-envelope text-white text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-medium text-slate-500 mb-1">Email</div>
+                  <div class="text-slate-900 font-medium">budinaeka@gmail.com</div>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center flex-shrink-0">
+                  <i class="ph-fill ph-map-pin text-white text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-medium text-slate-500 mb-1">Location</div>
+                  <div class="text-slate-900 font-medium">Sukabumi, Indonesia</div>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
+                  <i class="ph-fill ph-briefcase text-white text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-medium text-slate-500 mb-1">Position</div>
+                  <div class="text-slate-900 font-medium">Dinas Peternakan Kab. Sukabumi</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" />
+          
+          <!-- Right Form -->
+          <div class="fade-in-up delay-200">
+            <form class="glass-card p-6 lg:p-8 space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nama Lengkap</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  class="input-field"
+                  placeholder="Masukkan nama Anda"
+                />
               </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  class="input-field"
+                  placeholder="nama@email.com"
+                />
               </div>
-              <div class="mb-3">
-                <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3"></textarea>
+              
+              <div>
+                <label for="pesan" class="block text-sm font-medium text-slate-700 mb-2">Pesan</label>
+                <textarea 
+                  id="pesan" 
+                  rows="4" 
+                  class="input-field resize-none"
+                  placeholder="Tulis pesan Anda di sini..."
+                ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Kirim</button>
+              
+              <button type="submit" class="btn-primary w-full justify-center group">
+                Kirim Pesan
+                <i class="ph ph-paper-plane-tilt text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </button>
             </form>
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#083d62"
-          fill-opacity="1"
-          d="M0,64L48,101.3C96,139,192,213,288,229.3C384,245,480,203,576,186.7C672,171,768,181,864,202.7C960,224,1056,256,1152,245.3C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
     </section>
-    <!-- contact end -->
+    <!-- Contact end -->
     <!-- Footer Start -->
-    <footer class="text-white text-center pb-3" style="background-color: #083d62">
-      <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="#" class="text-white fw-bold">Budina Eka</a></p>
+    <footer class="bg-slate-900 text-white py-8">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="text-center md:text-left">
+            <div class="text-lg font-semibold mb-1">Budina Eka Prasetia</div>
+            <p class="text-slate-400 text-sm">Veterinary Officer & Spatial Data Scientist</p>
+          </div>
+          
+          <div class="flex items-center gap-2 text-sm text-slate-400">
+            <span>Created with</span>
+            <i class="ph-fill ph-heart text-red-500 animate-pulse"></i>
+            <span>in 2026</span>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- Footer end -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <!-- Projects Data Manager -->
+    <script src="projects-data.js"></script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+      
+      // Smooth scroll for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
