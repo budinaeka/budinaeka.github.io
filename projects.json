@@ -18,6 +18,15 @@
     "link": "https://doi.org/10.1051/bioconf/202622903003"
   },
   {
+    "id": 1778730766460,
+    "title": "EpiMetricsID",
+    "description": "EpiMetricsId adalah aplikasi web analitik epidemiologi berbasis Python/Flask yang dirancang untuk membantu pengguna mengunggah, mengeksplorasi, menganalisis, dan memvisualisasikan data epidemiologi secara praktis dalam satu workspace.\n\nAplikasi ini menyediakan fitur upload data .csv dan .xlsx, preview dataset, validasi tipe kolom, pembuatan dummy data untuk latihan, serta berbagai modul analisis epidemiologi. Di dalamnya tersedia perhitungan ukuran sampel, analisis deskriptif, visualisasi plot, analisis tabel 2x2 seperti OR/RR/PR, analisis bivariat, regresi OLS, regresi logistik binomial, dan regresi logistik multinomial.\n\nEpiMetricsId juga dilengkapi modul Uji Diagnostik untuk menghitung metrik seperti sensitivitas, spesifisitas, serta parameter diagnostik lain berdasarkan nilai TP, FP, FN, dan TN. Untuk kebutuhan pemetaan, aplikasi ini memiliki modul Spatio-temporal Map yang mendukung peta interaktif, clustering, heatmap, filter waktu, time slider, grafik tren bulanan, dan ringkasan lokasi seperti top kecamatan.",
+    "category": "other",
+    "size": "small",
+    "image": "img/products/epimetricsid.jpg",
+    "link": "https://epimetrics.dvmanalytics.id/"
+  },
+  {
     "id": 2,
     "title": "Peta Risiko Penyakit Rabies",
     "description": "Kabupaten Sukabumi",
