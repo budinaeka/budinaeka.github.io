@@ -36,13 +36,13 @@
     "link": "https://status-kitwan.budinaeka.my.id/"
   },
   {
-    "id": 2,
-    "title": "Peta Risiko Penyakit Rabies",
-    "description": "Kabupaten Sukabumi",
-    "category": "mapping",
-    "size": "medium",
-    "image": "img/products/2.jpg",
-    "link": ""
+    "id": 1778733313540,
+    "title": "PMK simulator",
+    "description": "PMK Simulator adalah aplikasi untuk simulasi penyebaran Penyakit Mulut dan Kuku (PMK/FMD) pada populasi ternak di Kabupaten Sukabumi.\nFitur Utama:\nInput data populasi ternak dan lokasi peternakan (4 tipe: Household, Communal, Commercial, Market)\nSimulasi penyebaran penyakit dengan model SEIRDVX stokastik\nStrategi kontrol: vaksinasi, depopulasi, pembatasan pergerakan, pengaturan hari pasar\nVisualisasi hasil simulasi dengan animasi interaktif\nAnalisis epidemiologi komprehensif",
+    "category": "epidemiology",
+    "size": "small",
+    "image": "img/products/pmksimulator.png",
+    "link": "https://budinaeka.shinyapps.io/pmk-simulator/"
   },
   {
     "id": 3,
@@ -61,5 +61,14 @@
     "size": "small",
     "image": "img/products/4.jpg",
     "link": "https://budinamerapi.vercel.app"
+  },
+  {
+    "id": 2,
+    "title": "Peta Risiko Penyakit Rabies",
+    "description": "Kabupaten Sukabumi",
+    "category": "mapping",
+    "size": "medium",
+    "image": "img/products/2.jpg",
+    "link": ""
   }
 ]
