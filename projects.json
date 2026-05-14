@@ -45,6 +45,24 @@
     "link": "https://budinaeka.shinyapps.io/pmk-simulator/"
   },
   {
+    "id": 1778734501433,
+    "title": "myPuskeswan",
+    "description": "Sistem Informasi Manajemen Puskeswan (Pusat Kesehatan Hewan) berbasis web (Single Page Application) dengan backend PHP Native dan Database MySQL.\nFitur Utama\nAutentikasi: Login sistem.\nDashboard: Ringkasan data pelayanan dan grafik statistik.\nManajemen User: Tambah dan hapus pengguna (Admin/Staff).\nLayanan Pengobatan: Pencatatan data pasien, diagnosa/terapi, dan foto dokumentasi.\nVaksinasi: Pencatatan vaksinasi PMK, Rabies, dan LSD dengan foto dokumentasi.\nMonitoring: Data Kelompok Tani (Poktan) dan BUMDES dengan foto dokumentasi.\nSurveilans: Pencatatan data surveilans PHMS dengan foto dokumentasi.\nAdministrasi Surat: Surat Masuk, Surat Keluar, dan Surat Keterangan dengan foto dokumentasi.\nStok Obat: Manajemen stok obat dan pemakaian.\nKegiatan Lain: Pencatatan kegiatan rapat, pelatihan, atau koordinasi dengan foto dokumentasi.\nKunjungan Tamu: Buku tamu digital untuk mencatat kunjungan dengan foto dokumentasi.\nKreasi Konten: Pencatatan konten media sosial (Instagram, TikTok, dll) dengan judul, link, dan screenshot.\nMobile Friendly: Tampilan responsif dengan sidebar yang dapat disembunyikan pada perangkat mobile.",
+    "category": "vibecoding",
+    "size": "small",
+    "image": "img/products/mypuskeswan.png",
+    "link": "https://puskeswansukalarang.web.id/"
+  },
+  {
+    "id": 1778734618352,
+    "title": "Image & Video AI generator",
+    "description": "",
+    "category": "vibecoding",
+    "size": "small",
+    "image": "img/products/imageaigen.png",
+    "link": "https://imageaigen.budinaeka.my.id/"
+  },
+  {
     "id": 3,
     "title": "Lokasi Peternak Wilayah 1",
     "description": "",
