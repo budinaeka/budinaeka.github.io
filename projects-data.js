@@ -4,6 +4,10 @@
 const ProjectsManager = {
   // API endpoint for projects data
   dataSource: 'projects.json',
+
+  esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  },
   
   // Default projects data (fallback)
   defaultProjects: [
@@ -108,26 +112,27 @@ const ProjectsManager = {
         const aspectRatio = project.size === 'large' ? 'aspect-[16/9]' : 
                            project.size === 'medium' ? 'aspect-[4/3]' : 'aspect-square';
 
+        const e = s => this.esc(s);
         projectCard.innerHTML = `
           <div class="relative h-full overflow-hidden rounded-[2rem] bg-white border border-slate-200/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
             <div class="${aspectRatio} overflow-hidden">
-              <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="${e(project.image)}" alt="${e(project.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             </div>
             <div class="p-${project.size === 'large' ? '6 lg:p-7' : '5'}">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-${config.color}-50 text-${config.color}-700 text-xs font-medium mb-3">
                 <i class="ph-fill ph-${config.icon}"></i>
-                ${config.label}
+                ${e(config.label)}
               </div>
               <h3 class="text-${project.size === 'large' ? 'xl lg:text-2xl' : project.size === 'medium' ? 'lg' : 'base'} font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors">
-                ${project.title}
+                ${e(project.title)}
               </h3>
               ${project.description ? `
                 <p class="text-sm text-slate-600 ${project.size === 'large' ? 'mb-4' : 'mb-2'} leading-relaxed">
-                  ${project.description}
+                  ${e(project.description)}
                 </p>
               ` : ''}
               ${hasLink ? `
-                <a href="${project.link}" target="_blank" class="inline-flex items-center gap-2 text-sm text-primary font-medium hover:gap-3 transition-all">
+                <a href="${e(project.link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-primary font-medium hover:gap-3 transition-all">
                   ${project.category === 'research' ? 'Read Publication' : 'View Map'}
                   <i class="ph ph-arrow-right ${project.size === 'small' ? 'text-xs' : ''}"></i>
                 </a>

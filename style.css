@@ -409,6 +409,28 @@ body {
   --tw-gradient-from: #e879f9;
 }
 
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  .floating-shape,
+  .pulse-dot,
+  .scroll-indicator,
+  .floating-badge {
+    animation: none;
+  }
+  .fade-in-up {
+    opacity: 1;
+    animation: none;
+  }
+  .glass-card,
+  .bento-item,
+  .skill-card,
+  .stat-card,
+  .btn-primary,
+  .btn-secondary {
+    transition: none;
+  }
+}
+
 /* === SMOOTH TRANSITIONS === */
 * {
   -webkit-font-smoothing: antialiased;
