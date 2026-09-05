@@ -128,7 +128,7 @@ const ProjectsManager = {
               ` : ''}
               ${hasLink ? `
                 <a href="${project.link}" target="_blank" class="inline-flex items-center gap-2 text-sm text-primary font-medium hover:gap-3 transition-all">
-                  ${project.category === 'research' ? 'Read Publication' : 'View Map'}
+                  ${project.category === 'research' ? 'Read Publication' : 'View Project'}
                   <i class="ph ph-arrow-right ${project.size === 'small' ? 'text-xs' : ''}"></i>
                 </a>
               ` : ''}

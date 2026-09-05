@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Spatial Risk Assessment of Foot and Mouth Disease",
-    "description": "Foot and mouth disease (FMD) is a highly contagious viral disease that affects cloven-hoofed animals and causes substantial economic losses. This study aimed to conduct a spatial risk assessment of FMD in Sukabumi Regency, Indonesia, to identify high-risk areas and guide mitigation efforts. The research integrated Geographic Information Systems (GIS) and Multicriteria Decision Analysis (MCDA) using the Analytical Hierarchy Process (AHP). The findings highlight the critical role of livestock movement and trade connectivity in FMD transmission. The risk map generated in this study can be a valuable tool for policymakers and veterinary authorities to prioritize interventions, allocate resources effectively, and implement targeted strategies to mitigate FMD risk. The integrated GIS and MCDA approach offers a replicable framework for spatial risk assessment of FMD in other regions with similar challenges.",
+    "description": "Published spatial risk assessment of Foot-and-Mouth Disease in Sukabumi Regency using GIS, Multicriteria Decision Analysis, and AHP. The map helps veterinary authorities prioritize surveillance, vaccination, and movement-control interventions.",
     "category": "research",
     "size": "large",
     "image": "img/products/1.jpg",
@@ -11,7 +11,7 @@
   {
     "id": 5,
     "title": "Random Forest Risk Mapping of Foot-and-Mouth Disease in Sukabumi Regency, Indonesia",
-    "description": "Foot-and-Mouth Disease (FMD) is a highly contagious viral disease that severely impacts livestock economies, especially in regions like Sukabumi Regency, Indonesia, where livestock farming is vital. This study aimed to assess the spatial risk of FMD in Sukabumi using Random Forest (RF) and Geographic Information Systems (GIS) to produce a comprehensive risk map. The objective was to identify high-risk zones and understand the key factors influencing FMD outbreaks in the region. A Random Forest model was trained and validated using these predictors, with data split into training and testing subsets. Performance metrics, such as accuracy, sensitivity, specificity, and AUC, were used to evaluate model effectiveness. ",
+    "description": "Machine-learning risk mapping of Foot-and-Mouth Disease using Random Forest and GIS predictors. The project explores spatial drivers of FMD risk and supports targeted mitigation planning in Sukabumi Regency.",
     "category": "research",
     "size": "medium",
     "image": "img/products/5.jpg",
@@ -20,7 +20,7 @@
   {
     "id": 1778730766460,
     "title": "EpiMetricsID",
-    "description": "EpiMetricsId adalah aplikasi web analitik epidemiologi berbasis Python/Flask yang dirancang untuk membantu pengguna mengunggah, mengeksplorasi, menganalisis, dan memvisualisasikan data epidemiologi secara praktis dalam satu workspace.\n\nAplikasi ini menyediakan fitur perhitungan ukuran sampel, analisis deskriptif, visualisasi plot, analisis tabel 2x2 seperti OR/RR/PR, analisis bivariat, regresi OLS, regresi logistik binomial, dan regresi logistik multinomial, juga dilengkapi modul Uji Diagnostik serta modul Spatio-temporal Map",
+    "description": "A Python/Flask epidemiology analytics workspace for descriptive analysis, sample-size calculation, 2x2 epidemiological measures, regression, diagnostic tests, and spatio-temporal mapping.",
     "category": "epidemiology",
     "size": "small",
     "image": "img/products/epimetricsid.jpg",
@@ -29,7 +29,7 @@
   {
     "id": 1778732467539,
     "title": "status-kitwan.dvmanalytics.id",
-    "description": "Status Kitwan adalah aplikasi peta interaktif untuk menampilkan status situasi penyakit hewan di Indonesia berdasarkan wilayah kabupaten/kota, mengacu pada Kepmentan No.287/KPTS/HK.150/M/04/2026.  Aplikasi ini memungkinkan pengguna memilih jenis penyakit hewan, seperti PMK, LSD, ASF, Rabies, HPAI, Brucellosis, Anthraks, CSF, SE, Jembrana, dan Surra, lalu melihat klasifikasi wilayah berdasarkan status Bebas, Terduga, atau Tertular.  ",
+    "description": "Interactive Indonesian animal disease status map based on Kepmentan No.287/KPTS/HK.150/M/04/2026, covering PMK, LSD, ASF, Rabies, HPAI, Brucellosis, Anthrax, CSF, SE, Jembrana, and Surra.",
     "category": "mapping",
     "size": "small",
     "image": "img/products/statuskitwan.png",
@@ -37,8 +37,8 @@
   },
   {
     "id": 1778733313540,
-    "title": "PMK simulator",
-    "description": "PMK Simulator adalah aplikasi untuk simulasi penyebaran Penyakit Mulut dan Kuku (PMK/FMD) pada populasi ternak di Kabupaten Sukabumi.\nFitur Utama:\nInput data populasi ternak dan lokasi peternakan (4 tipe: Household, Communal, Commercial, Market)\nSimulasi penyebaran penyakit dengan model SEIRDVX stokastik\nStrategi kontrol: vaksinasi, depopulasi, pembatasan pergerakan, pengaturan hari pasar\nVisualisasi hasil simulasi dengan animasi interaktif\nAnalisis epidemiologi komprehensif",
+    "title": "PMK Simulator",
+    "description": "A Shiny-based simulation tool for Foot-and-Mouth Disease spread in Sukabumi livestock populations using stochastic SEIRDVX modelling. It supports vaccination, depopulation, movement restriction, and market-day control scenarios.",
     "category": "epidemiology",
     "size": "small",
     "image": "img/products/pmksimulator.png",
@@ -47,8 +47,35 @@
   {
     "id": 1778734501433,
     "title": "myPuskeswan",
-    "description": "Sistem Informasi Manajemen Puskeswan (Pusat Kesehatan Hewan) berbasis web (Single Page Application) dengan backend PHP Native dan Database MySQL.\nFitur Utama\nAutentikasi: Login sistem.\nDashboard: Ringkasan data pelayanan dan grafik statistik.\nManajemen User: Tambah dan hapus pengguna (Admin/Staff).\nLayanan Pengobatan: Pencatatan data pasien, diagnosa/terapi, dan foto dokumentasi.\nVaksinasi: Pencatatan vaksinasi PMK, Rabies, dan LSD dengan foto dokumentasi.\nMonitoring: Data Kelompok Tani (Poktan) dan BUMDES dengan foto dokumentasi.\nSurveilans: Pencatatan data surveilans PHMS dengan foto dokumentasi.\nAdministrasi Surat: Surat Masuk, Surat Keluar, dan Surat Keterangan dengan foto dokumentasi.\nStok Obat: Manajemen stok obat dan pemakaian.\nKegiatan Lain: Pencatatan kegiatan rapat, pelatihan, atau koordinasi dengan foto dokumentasi.\nKunjungan Tamu: Buku tamu digital untuk mencatat kunjungan dengan foto dokumentasi.\nKreasi Konten: Pencatatan konten media sosial (Instagram, TikTok, dll) dengan judul, link, dan screenshot.\nMobile Friendly: Tampilan responsif dengan sidebar yang dapat disembunyikan pada perangkat mobile.",
+    "description": "A web-based Puskeswan management information system for treatment, vaccination, monitoring, surveillance, medicine stock, guest book, content records, reports, photos/videos, and dashboard analytics. Built with PHP Native, MySQL, and a mobile-friendly SPA interface.",
     "category": "vibecoding",
+    "size": "medium",
+    "image": "img/products/mypuskeswan.png",
+    "link": "https://puskeswansukalarang.web.id/"
+  },
+  {
+    "id": 2026090501,
+    "title": "Puskeswan Agentic AI",
+    "description": "Agentic AI workflow for Puskeswan services: automated reports, dashboard insights, WhatsApp gateway integration, field-data processing, and decision-support routines built around real animal health service data.",
+    "category": "aiagents",
+    "size": "medium",
+    "image": "img/products/mypuskeswan.png",
+    "link": "https://puskeswansukalarang.web.id/"
+  },
+  {
+    "id": 2026090502,
+    "title": "LPJ/SPJ Automation",
+    "description": "Administrative automation for SPT, SPPD, receipts, cost details, travel documentation, and vaccination schedule normalization, reducing repetitive paperwork for field veterinary activities.",
+    "category": "vibecoding",
+    "size": "small",
+    "image": "img/products/imageaigen.png",
+    "link": "https://puskeswansukalarang.web.id/lpjgen2/"
+  },
+  {
+    "id": 2026090503,
+    "title": "E-LOK Activity Sync",
+    "description": "Workflow automation that converts verified Puskeswan service records into structured employee activity logs, helping align field evidence, daily workloads, and performance documentation.",
+    "category": "aiagents",
     "size": "small",
     "image": "img/products/mypuskeswan.png",
     "link": "https://puskeswansukalarang.web.id/"
@@ -56,7 +83,7 @@
   {
     "id": 1778734618352,
     "title": "Image & Video AI generator",
-    "description": "",
+    "description": "A web application for generating AI images and videos, used to support digital content creation and communication materials.",
     "category": "vibecoding",
     "size": "small",
     "image": "img/products/imageaigen.png",
@@ -65,7 +92,7 @@
   {
     "id": 3,
     "title": "Lokasi Peternak Wilayah 1",
-    "description": "",
+    "description": "WebGIS map showing livestock farmer locations in Puskeswan service area, supporting field planning and spatial understanding of service coverage.",
     "category": "webgis",
     "size": "small",
     "image": "img/products/3.jpg",
@@ -74,7 +101,7 @@
   {
     "id": 4,
     "title": "Rawan Bencana Merapi",
-    "description": "",
+    "description": "Interactive disaster-risk map around Merapi area, demonstrating WebGIS-based visualization for hazard awareness and spatial decision support.",
     "category": "disaster",
     "size": "small",
     "image": "img/products/4.jpg",
@@ -83,9 +110,9 @@
   {
     "id": 2,
     "title": "Peta Risiko Penyakit Rabies",
-    "description": "Kabupaten Sukabumi",
+    "description": "Rabies risk map for Sukabumi Regency, designed to support animal health surveillance, prevention planning, and public health coordination.",
     "category": "mapping",
-    "size": "medium",
+    "size": "small",
     "image": "img/products/2.jpg",
     "link": ""
   }
